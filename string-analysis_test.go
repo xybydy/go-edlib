@@ -5,17 +5,29 @@ import (
 	"testing"
 )
 
-var strList []string
+type strType []struct {
+	s string
+}
+
+var strList strType
+
+func (s strType) Len() int {
+	return len(s)
+}
+
+func (s strType) String(i int) string {
+	return s[i].s
+}
 
 func init() {
-	strList = []string{
-		"test",
-		"tester",
-		"tests",
-		"testers",
-		"testing",
-		"tsting",
-		"sting",
+	strList = strType{
+		{"test"},
+		{"tester"},
+		{"tests"},
+		{"testers"},
+		{"testing"},
+		{"tsting"},
+		{"sting"},
 	}
 }
 
@@ -147,7 +159,7 @@ func TestStringsSimilarity(t *testing.T) {
 func TestFuzzySearch(t *testing.T) {
 	type args struct {
 		str     string
-		strList []string
+		strList Source
 		algo    Algorithm
 	}
 	tests := []struct {
@@ -177,7 +189,7 @@ func TestFuzzySearch(t *testing.T) {
 func TestFuzzySearchThreshold(t *testing.T) {
 	type args struct {
 		str     string
-		strList []string
+		strList Source
 		minSim  float32
 		algo    Algorithm
 	}
@@ -209,7 +221,7 @@ func TestFuzzySearchThreshold(t *testing.T) {
 func TestFuzzySearchSet(t *testing.T) {
 	type args struct {
 		str      string
-		strList  []string
+		strList  Source
 		quantity int
 		algo     Algorithm
 	}
@@ -239,7 +251,7 @@ func TestFuzzySearchSet(t *testing.T) {
 func TestFuzzySearchSetThreshold(t *testing.T) {
 	type args struct {
 		str      string
-		strList  []string
+		strList  Source
 		quantity int
 		minSim   float32
 		algo     Algorithm
