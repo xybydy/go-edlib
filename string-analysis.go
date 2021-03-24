@@ -61,47 +61,59 @@ func matchingIndex(str1 string, str2 string, distance int) float32 {
 
 // FuzzySearch realize an approximate search on a string list and return the closest one compared
 // to the string input
-func FuzzySearch(str string, strList Source, algo Algorithm) (string, error) {
-	var higherMatchPercent float32
-	var tmpStr string
+func FuzzySearch(str string, strList Source, algo Algorithm) (*Match, error) {
+	var HighMatch Match
+
 	for i := 0; i < strList.Len(); i++ {
 		strToCmp := strList.String(i)
 		sim, err := StringsSimilarity(str, strToCmp, algo)
+
+		match := Match{
+			Str:   strToCmp,
+			Index: i,
+			Score: sim,
+		}
+
 		if err != nil {
-			return "", err
+			return nil, err
 		}
 
 		if sim == 1.0 {
-			return strToCmp, nil
-		} else if sim > higherMatchPercent {
-			higherMatchPercent = sim
-			tmpStr = strToCmp
+			return &match, nil
+		} else if sim > HighMatch.Score {
+			HighMatch = match
 		}
 	}
 
-	return tmpStr, nil
+	return &HighMatch, nil
 }
 
 // FuzzySearchThreshold realize an approximate search on a string list and return the closest one compared
 // to the string input. Takes a similarity threshold in parameter.
-func FuzzySearchThreshold(str string, strList Source, minSim float32, algo Algorithm) (string, error) {
-	var higherMatchPercent float32
-	var tmpStr string
+func FuzzySearchThreshold(str string, strList Source, minSim float32, algo Algorithm) (*Match, error) {
+	var HighMatch Match
+
 	for i := 0; i < strList.Len(); i++ {
 		strToCmp := strList.String(i)
 		sim, err := StringsSimilarity(str, strToCmp, algo)
+
+		match := Match{
+			Str:   strToCmp,
+			Index: i,
+			Score: sim,
+		}
+
 		if err != nil {
-			return "", err
+			return nil, err
 		}
 
 		if sim == 1.0 {
-			return strToCmp, nil
-		} else if sim > higherMatchPercent && sim >= minSim {
-			higherMatchPercent = sim
-			tmpStr = strToCmp
+			return &match, nil
+		} else if sim > HighMatch.Score && sim >= minSim {
+			HighMatch = match
 		}
 	}
-	return tmpStr, nil
+	return &HighMatch, nil
 }
 
 // FuzzySearchSet realize an approximate search on a string list and return a set composed with x strings compared

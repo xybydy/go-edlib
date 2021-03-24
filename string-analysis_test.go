@@ -170,7 +170,6 @@ func TestFuzzySearch(t *testing.T) {
 	}{
 		{"FuzzySearch 'testing'", args{"testnig", strList, Levenshtein}, "testing", false},
 		{"FuzzySearch 'testing'", args{"test", strList, Levenshtein}, "test", false},
-		{"FuzzySearch 'testing' err", args{"testnig", strList, Hamming}, "", true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -179,7 +178,7 @@ func TestFuzzySearch(t *testing.T) {
 				t.Errorf("FuzzySearch() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
+			if got.Str != tt.want {
 				t.Errorf("FuzzySearch() = %v, want %v", got, tt.want)
 			}
 		})
@@ -211,7 +210,7 @@ func TestFuzzySearchThreshold(t *testing.T) {
 				t.Errorf("FuzzySearchThreshold() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
+			if got.Str != tt.want {
 				t.Errorf("FuzzySearchThreshold() = %v, want %v", got, tt.want)
 			}
 		})
@@ -232,7 +231,6 @@ func TestFuzzySearchSet(t *testing.T) {
 		wantErr bool
 	}{
 		{"FuzzySearch 'testing'", args{"testnig", strList, 3, Levenshtein}, []string{"testing", "test", "tester"}, false},
-		{"FuzzySearch 'testing' err", args{"testnig", strList, 3, Hamming}, nil, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
