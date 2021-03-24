@@ -1,23 +1,23 @@
 <h1 align="center">Go-edlib : Edit distance and string comparison library</h1>
 
 <p align="center">
-  <a href="https://travis-ci.org/github/hbollon/go-edlib" target="_blank">
-    <img alt="Travis CI" src="https://travis-ci.org/hbollon/go-edlib.svg?branch=master" />
+  <a href="https://travis-ci.org/github/xybydy/go-edlib" target="_blank">
+    <img alt="Travis CI" src="https://travis-ci.org/xybydy/go-edlib.svg?branch=master" />
   </a>
-  <a href="https://codecov.io/gh/hbollon/go-edlib">
-    <img alt="Test coverage" src="https://codecov.io/gh/hbollon/go-edlib/branch/master/graph/badge.svg" />
+  <a href="https://codecov.io/gh/xybydy/go-edlib">
+    <img alt="Test coverage" src="https://codecov.io/gh/xybydy/go-edlib/branch/master/graph/badge.svg" />
   </a>
-  <a href="https://goreportcard.com/report/github.com/hbollon/go-edlib" target="_blank">
-    <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/hbollon/go-edlib" />
+  <a href="https://goreportcard.com/report/github.com/xybydy/go-edlib" target="_blank">
+    <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/xybydy/go-edlib" />
   </a>
-  <a href="https://github.com/hbollon/go-edlib/blob/master/LICENSE.md" target="_blank">
+  <a href="https://github.com/xybydy/go-edlib/blob/master/LICENSE.md" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://godoc.org/github.com/hbollon/go-edlib" target="_blank">
-    <img alt="Documentation link" src="https://godoc.org/github.com/hbollon/go-edlib?status.svg" />
+  <a href="https://godoc.org/github.com/xybydy/go-edlib" target="_blank">
+    <img alt="Documentation link" src="https://godoc.org/github.com/xybydy/go-edlib?status.svg" />
   </a>
-  <a href="https://pkg.go.dev/github.com/hbollon/go-edlib" target="_blank">
-    <img src="https://pkg.go.dev/badge/github.com/hbollon/go-edlib" alt="PkgGoDev">
+  <a href="https://pkg.go.dev/github.com/xybydy/go-edlib" target="_blank">
+    <img src="https://pkg.go.dev/badge/github.com/xybydy/go-edlib" alt="PkgGoDev">
   </a>
 </p>
 
@@ -67,7 +67,7 @@ This library is 100% test covered 😁
 ## Benchmarks
 You can check an interactive Google chart with few benchmark cases for all similarity algorithms in this library through **StringSimilarity** function [here](http://benchgraph.codingberg.com/q5)
 
-However, if you want or need more details, you can also viewing benchmark raw output [here](https://github.com/hbollon/go-edlib/blob/master/tests/outputs/benchmarks.txt), which also includes memory allocations and test cases output (similarity result and errors).
+However, if you want or need more details, you can also viewing benchmark raw output [here](https://github.com/xybydy/go-edlib/blob/master/tests/outputs/benchmarks.txt), which also includes memory allocations and test cases output (similarity result and errors).
 
 If you are on Linux and want to run them on your setup, you can run ``` ./tests/benchmark.sh ``` script.
 
@@ -75,14 +75,14 @@ If you are on Linux and want to run them on your setup, you can run ``` ./tests/
 Open bash into your project folder and run:
 
 ```bash
-go get github.com/hbollon/go-edlib
+go get github.com/xybydy/go-edlib
 ```
 
 And import it into your project:
 
 ```go
 import (
-	"github.com/hbollon/go-edlib"
+	"github.com/xybydy/go-edlib"
 )
 ```
 
@@ -97,7 +97,7 @@ go test ./... # Add desired parameters to this command if you want
 
 ## Documentation
 
-**You can find all the documentation here :** [Documentation](https://godoc.org/github.com/hbollon/go-edlib) 
+**You can find all the documentation here :** [Documentation](https://godoc.org/github.com/xybydy/go-edlib) 
 
 ## Examples
 
@@ -226,11 +226,11 @@ Result for 'testnig' with '0.7' threshold: testing
 ### Get raw edit distance (Levenshtein, LCS, Damerau–Levenshtein, Hamming)
 
 You can use one of the following function to get an edit distance between two strings :
-- [LevenshteinDistance](https://pkg.go.dev/github.com/hbollon/go-edlib#LevenshteinDistance)(str1, str2)
-- [DamerauLevenshteinDistance](https://pkg.go.dev/github.com/hbollon/go-edlib#DamerauLevenshteinDistance)(str1, str2)
-- [OSADamerauLevenshteinDistance](https://pkg.go.dev/github.com/hbollon/go-edlib#OSADamerauLevenshteinDistance)(str1, str2)
-- [LCSEditDistance](https://pkg.go.dev/github.com/hbollon/go-edlib#LCSEditDistance)(str1, str2)
-- [HammingDistance](https://pkg.go.dev/github.com/hbollon/go-edlib#HammingDistance)(str1, str2)
+- [LevenshteinDistance](https://pkg.go.dev/github.com/xybydy/go-edlib#LevenshteinDistance)(str1, str2)
+- [DamerauLevenshteinDistance](https://pkg.go.dev/github.com/xybydy/go-edlib#DamerauLevenshteinDistance)(str1, str2)
+- [OSADamerauLevenshteinDistance](https://pkg.go.dev/github.com/xybydy/go-edlib#OSADamerauLevenshteinDistance)(str1, str2)
+- [LCSEditDistance](https://pkg.go.dev/github.com/xybydy/go-edlib#LCSEditDistance)(str1, str2)
+- [HammingDistance](https://pkg.go.dev/github.com/xybydy/go-edlib#HammingDistance)(str1, str2)
 
 Example with Levenshtein distance:
 ```go
@@ -319,7 +319,7 @@ LCS Diff:
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hbollon/go-edlib/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/xybydy/go-edlib/issues). 
 
 ## Show your support
 
@@ -328,4 +328,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2020 [Hugo Bollon](https://github.com/hbollon).<br />
-This project is [MIT License](https://github.com/hbollon/go-edlib/blob/master/LICENSE.md) licensed.
+This project is [MIT License](https://github.com/xybydy/go-edlib/blob/master/LICENSE.md) licensed.

@@ -2,7 +2,7 @@
 Begin benchmark between sameLengthStringInput/asmePenhtgTsrnigIpnut : 
 goos: linux
 goarch: amd64
-pkg: github.com/hbollon/go-edlib/tests/benchmarks
+pkg: github.com/xybydy/go-edlib/tests/benchmarks
 BenchmarkEdlibAlgorithms/Levenshtein_sameLengthStringInput/asmePenhtgTsrnigIpnut-4         	  911866	      1319 ns/op	     176 B/op	       1 allocs/op
 Sim: 0.476190, Err: %!s(<nil>) 
 
@@ -106,4 +106,4 @@ BenchmarkEdlibAlgorithms/Cosine_I_love_horror_movies/Lights_out_is_a_horror_movi
 Sim: 0.204124, Err: %!s(<nil>) 
 
 PASS
-ok  	github.com/hbollon/go-edlib/tests/benchmarks	45.551s
+ok  	github.com/xybydy/go-edlib/tests/benchmarks	45.551s

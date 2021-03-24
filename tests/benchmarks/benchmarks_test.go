@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	edlib "github.com/hbollon/go-edlib"
+	edlib "github.com/xybydy/go-edlib"
 )
 
 type pair struct {

@@ -3,7 +3,7 @@ package edlib
 import (
 	"errors"
 
-	"github.com/hbollon/go-edlib/internal/utils"
+	"github.com/xybydy/go-edlib/internal/utils"
 )
 
 // LCS takes two strings and compute their LCS(Longuest Common Subsequence)
